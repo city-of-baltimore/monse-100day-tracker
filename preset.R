@@ -98,10 +98,10 @@
   #Load and format data
 
     #set up sheets
-    pg1 <- read_excel("data/100 Day Tracker Data.xlsx", sheet = "Actions")
-    tbDays <- read_excel("data/100 Day Tracker Data.xlsx", sheet = "Days")
-    pg3 <- read_excel("data/100 Day Tracker Data.xlsx", sheet = "Committees")
-    pg4 <- read_excel("data/100 Day Tracker Data.xlsx", sheet = "Progress Updates")
+    pg1 <- read_excel("data/MONSE 100 Day Tracker Data.xlsx", sheet = "Actions")
+    tbDays <- read_excel("data/MONSE 100 Day Tracker Data.xlsx", sheet = "Days")
+    pg3 <- read_excel("data/MONSE 100 Day Tracker Data.xlsx", sheet = "Committees")
+    pg4 <- read_excel("data/MONSE 100 Day Tracker Data.xlsx", sheet = "Progress Updates")
     
     # Read in text update files from updates folder
     # Used https://wordtohtml.net/
@@ -169,17 +169,11 @@
     #Document Text
     
     # Add text for Brandon Scott's welcome
-    title <- "Mayor Brandon M. Scott: 100 Days of Action Tracker"
-    text1 <- div(HTML("<p>In November, Mayor Brandon M. Scott convened more than 250 Baltimoreans to serve on his 
-    Mayoral transition team. The youth, community leaders, educators, advocates, artists, entrepreneurs and residents 
-    involved in this process developed short-term and long-term recommendations to guide the administration over the 
-    next four years and beyond. 
-      </p><p>The Mayor and his executive team reviewed these plans and built a coordinated strategy for his first 
-                      term, starting with the 100 Days of Action. Follow updates across each of these actions and 
-                      track their completion with the tracker below.</p>"))
-    text2 <- div(HTML("<p class=\"tab-header\">Follow Mayor Scott's early achievements here! To learn about the 
-                      Mayor's transition process and priority areas, visit ",
-                      "<a href='https://www.brandonsplan.com/transition-team'>this page</a>.</p>"))
+    title <- "MONSE 100-day Plan Action Tracker"
+    text1 <- div(HTML("<p>In December 2020, Mayor Brandon M. Scott established the Mayor’s Office of Neighborhood Safety and Engagement (MONSE) and appointed Shantay Jackson as its Director.  MONSE empowers community partners and city agencies to play a more active role in the co-production of public safety and prevention of violence through a trauma-responsive, healing-centered, and equity-based approach for the benefit of all Baltimoreans.
+      </p><p>Director Jackson and her team reviewed the Mayor’s public safety plan, his Transition Committee’s recommendations, the BCHD Violence Prevention Framework, and the BPD’s Crime Plan and used them to draft a 5-year strategic Violence Prevention Plan for Baltimore City.  The draft plan includes a coordinated strategy for MONSE, starting with the 100 Days of Action. Follow updates across each of MONSE’s pillars and track their completion with the tracker below.</p>"))
+    text2 <- div(HTML("<p class=\"tab-header\">Follow MONSE’s early achievements here!  To see the entire plan, visit ",
+                      "<a href='https://monse.baltimorecity.gov/sites/default/files/MayorBMS_Draft_ViolenceReductionFrameworkPlan.pdf'>this page</a>.</p>"))
     text3 <- div(HTML("
       <p class=\"tab-header\">Every week, our team will share updates from across our government to keep you 
       involved in our work making Baltimore a safer, healthier, and more equitable city. Be sure to check back 

@@ -6,6 +6,9 @@
   library(tidyverse)
   library(shinyjs)
   library(DT)
+  
+  source('preset.R',local = T)
+  source('city-content.R', local=T)
 
   #-------------------------------
   
@@ -175,7 +178,7 @@
   # Second level content
     # Welcome comment from Mayor Scott
     div(style='margin-bottom:12px;margin-top:18px;',
-      img(src = "photos/mayor_brandon_scott.png",
+      img(src = "photos/shantay_jackson.jpg",
         style="margin-left: 2px; margin-top: 4px; margin-right:24px;margin-bottom:8px;float:left;" ,
         height = 235),
       text1),
@@ -200,10 +203,6 @@
                text2, 
                dataTableOutput("tbPriorities"), 
                downloadButton(style="border:none;padding-left:0px;margin-top:24px;","downloadActions", HTML("<p>Download this data (csv)</p>"))),
-      tabPanel(h4(style="color:black;","Updates"),
-        HTML(updateText)
-      ),
-      tabPanel(h4(style="color:black;","Message from the Mayor"), aboutus ),
       tabPanel(h4(style="color:black;","Resources & Feedback"), 
         text4,links,
         HTML('<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScjKePIaoUjUeI1-2Q9vvINtFdFl9ZGivr19BP6M9Hd6kdyhg/viewform?embedded=true" width="100%" height="360px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>')

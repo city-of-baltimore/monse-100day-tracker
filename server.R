@@ -7,6 +7,9 @@
   library(DT)
   library(shinyjs)
   
+  source('preset.R',local = T)
+  
+  
   #-----------------------------------
   
   # Basic Structure
@@ -15,7 +18,7 @@
     
   #------------------------------------
      
-   load(".RData")
+   #load(".RData")
     
   #------------------------------------
   # Get current time
@@ -71,12 +74,12 @@
       # they are still happening, the current date and number. If they are
       # no longer happening, return the date they ended.
       ifelse(which(tbDays$Date == Sys.Date())<=100,
-        paste0("Mayor Scott took office on 12/8/20. Today is day ", 
+        paste0("Mayor Scott approved MONSE’s draft plan on February 22, 2021. Today is day ", 
             which(tbDays$Date == Sys.Date()),
             "."
           ),
-        paste0("The 100 Days of Action began when Mayor Scott took office ",
-          "on 12/8/20. The last day was 3/17/21."
+        paste0("Mayor Scott approved MONSE’s draft plan on February 22, 2021. ",
+          "The last day was June 2, 2021."
         )
       )
     })
@@ -160,7 +163,7 @@
             return '<p>There is no additional data to display here.</p>';
           } else {
             var result = '<table class=\"priorities-hierarchy-2\" style=\"font-size:16px;padding:0.5em;margin-left:32px;width:calc(100% - 24px);\">';
-            result += '<tr><th>Action</th><th>Status</th><th>Parties Responsible</th></tr>';
+            result += '<tr><th>Action</th><th>Status</th></tr>';
             for (var i in d[5]){
               result += '<tr >';
               for (var j in d[5][i]) {
@@ -168,9 +171,7 @@
                   result += '<td style=\"width:300px;\">' + d[5][i][j] + '</td>';
                 } else if (j == 1) {
                   result += '<td style=\"width:120px;\">' + d[5][i][j] + '</td>';
-                } else {
-                  result += '<td>' + d[5][i][j] + '</td>';
-                }
+                } 
               }
               result += '</tr>';
             }
@@ -212,7 +213,7 @@
       write.csv(tbPriorities %>% 
                   rename(Status = Progress,
                          `Priority Area` = Committee) %>% 
-                  select(`Action #`, Action, Status, `Priority Area`,`Parties Responsible`), 
+                  select(`Action #`, Action, Status, `Priority Area`), 
                 file,
                 row.names=FALSE)
     }
